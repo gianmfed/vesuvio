@@ -39,49 +39,12 @@
         <!-- Masthead-->
         <header class="masthead" style="background-attachment: fixed">
             <div class="container">
-                <div class="masthead-subheading">Welcome To My Website!</div>
-                <div class="masthead-heading text-uppercase">Gianmarco Federico</div>
+                <div class="masthead-subheading"><p>I appreciate you taking the time to share your thoughts with me. Your feedback is important to me and will help me improve my services.</p>
+                    <p>You will be redirected to the main page in <span class="timer">10</span> seconds.</p></div>
+                <div class="masthead-heading text-uppercase">Thank you for your feedback!</div>
                 <!-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a> -->
             </div>
         </header>
-        <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Me</h2>
-                    <h3 class="section-subheading text-muted">Please send me your feedback.</h3>
-                </div>
-                <form id="contactForm" action="https://formsubmit.co/gianmfed@gmail.com" method="POST">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name" name="name"/>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email" name="email"/>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone" name="phone"/>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" name="message" required ></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="hidden" name="_next" value="https://gianmfed.000webhostapp.com/thanks.html">
-                    <!-- Submit Button-->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </section>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -104,5 +67,20 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            function countdown() {
+              var timer = document.querySelector(".timer");
+              var seconds = timer.textContent;
+              seconds--;
+              if (seconds >= 0) {
+                timer.textContent = seconds;
+              } else {
+                clearInterval(countdownInterval);
+                window.location.href = "https://gianmfed.000webhostapp.com/";
+              }
+            }
+        
+            var countdownInterval = setInterval(countdown, 1000);
+          </script>
     </body>
 </html>
