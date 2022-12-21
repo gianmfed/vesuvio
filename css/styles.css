@@ -11412,7 +11412,7 @@ header.masthead {
   color: #fff;
   background-image: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed; /*scroll;*/
   background-position: center center;
   background-size: cover;
 }
