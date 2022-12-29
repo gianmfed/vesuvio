@@ -1,8 +1,10 @@
 function handleFormSubmit(event) {
     console.log("in fuction")
+    return false;
+    /*
     // Prevent the default form submission action
     event.preventDefault();
-  
+    
     // Get the form data
     const formData = new FormData(event.target);
   
@@ -25,5 +27,6 @@ function handleFormSubmit(event) {
         console.log("error")
       }
     }
+    */
   }
   
