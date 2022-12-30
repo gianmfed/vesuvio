@@ -1,13 +1,16 @@
-function handleFormSubmit(event) {
-    console.log("in fuction")
-    return false;
-    /*
-    // Prevent the default form submission action
-    event.preventDefault();
-    
-    // Get the form data
-    const formData = new FormData(event.target);
-  
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  // Validate the form data here
+  // Call event.preventDefault() if the form is not valid
+  console.log("in function")
+  // Prevent the default form submission action
+  event.preventDefault()
+  // Get the form data
+  const formData = new FormData(event.target);
+  var name = formData.get('message');
+  console.log(name)
+});
+
+/*
     // Send the form data to the server via AJAX
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://formsubmit.co/gianmfed@gmail.com');
@@ -27,6 +30,6 @@ function handleFormSubmit(event) {
         console.log("error")
       }
     }
-    */
   }
+  */
   
