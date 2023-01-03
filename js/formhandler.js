@@ -8,20 +8,21 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   const formData = new FormData(event.target);
   var name = formData.get('message');
   console.log(name)
-});
-
-/*
-    // Send the form data to the server via AJAX
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://formsubmit.co/gianmfed@gmail.com');
-    xhr.send(formData);
+//});
   
-    // Handle the server response
-    xhr.onload = function() {
-      if (xhr.status === 200) {
+
+  // Send the form data to the server via AJAX
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://formsubmit.co/gianmfed@gmail.com');
+  xhr.send(formData);
+  console.log(xhr.response);
+  // Handle the server response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
         // The form was submitted successfully
         // Update the page or display a success message
         // ...
+        console.log(xhr.response);
         console.log("form submitted")
       } else {
         // There was an error submitting the form
@@ -31,5 +32,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       }
     }
   }
-  */
-  
+);
