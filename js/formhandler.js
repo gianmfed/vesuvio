@@ -8,28 +8,41 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
   // Send the form data to the server via AJAX
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://formsubmit.co/gianmfed@gmail.com');
+  xhr.open('POST', 'https://formsubmit.co/d1f5b81bd3827b70a6b3f109b150aabc');
   xhr.send(formData);
-  console.log(xhr.response);
   // Handle the server response
   xhr.onload = function() {
     if (xhr.status === 200) {
         // The form was submitted successfully
         // Update the page or display a success message
-        const button = document.getElementById('submitButton');
-        console.log(button)
-        button.innerHTML = 'Thankyou!';
-        button.style.backgroundColor = 'green'
-        button.style.borderColor = 'Chartreuse'
-        ###########################################################
-        button.classList.remove('btn');
-        button.classList.add('btn-primary');
-        console.log(xhr.response);
-        console.log("form submitted")
+
+        const response = xhr.response;
+        console.log(response)
+        const pattern = /Unable to submit form/i;
+        if (pattern.test(response)) {
+          const button = document.getElementById('submitButton');
+
+          button.innerHTML = 'Something went wrong! Retry';
+
+          button.classList.remove('btn-primary');
+          button.classList.add('btn-danger');
+        } else {
+          const button = document.getElementById('submitButton');
+
+          button.innerHTML = 'Thankyou!';
+
+          button.classList.remove('btn-primary');
+          button.classList.add('btn-success');
+        }
       } else {
         // There was an error submitting the form
         // Display an error message or update the page
-        console.log("error")
+        const button = document.getElementById('submitButton');
+
+        button.innerHTML = 'Something went wrong! Retry';
+
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-danger');
       }
     }
   }
