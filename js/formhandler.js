@@ -4,7 +4,12 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   // Get the form data
   const formData = new FormData(event.target);
   var message = formData.get('message');
-  console.log(message)  
+  // console.log(message)  
+  ////////////////////////////
+  // const buttontest = document.getElementById('submitButton');
+  // buttontest.classList.remove('d-none');
+  // // buttontest.innerHTML = 'Sending';
+  ////////////////////////////
 
   // Send the form data to the server via AJAX
   const xhr = new XMLHttpRequest();
