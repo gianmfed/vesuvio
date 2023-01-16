@@ -6,9 +6,11 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   var message = formData.get('message');
   // console.log(message)  
   ////////////////////////////
-  // const buttontest = document.getElementById('submitButton');
-  // buttontest.classList.remove('d-none');
-  // // buttontest.innerHTML = 'Sending';
+  const buttontest = document.getElementById('submitButton');
+  buttontest.classList.remove('d-none');
+  buttontest.innerHTML = 'Sending';
+
+  // setInterval(function() { // ritardare l'esecuzione
   ////////////////////////////
 
   // Send the form data to the server via AJAX
@@ -50,5 +52,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         button.classList.add('btn-danger');
       }
     }
+
+// }, 5000); // Appartiene a setInterval
   }
 );
