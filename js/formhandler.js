@@ -6,9 +6,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   var message = formData.get('message');
   // console.log(message)  
   ////////////////////////////
-  const buttontest = document.getElementById('submitButton');
-  buttontest.classList.remove('d-none');
-  buttontest.innerHTML = 'Sending';
+  const button = document.getElementById('submitButton');
+
+  button.classList.remove('d-none');
+  button.innerHTML = 'Sending';
 
   // setInterval(function() { // ritardare l'esecuzione
   ////////////////////////////
@@ -24,22 +25,23 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         // Update the page or display a success message
 
         const response = xhr.response;
-        console.log(response)
+        // console.log(response)
         const pattern = /Unable to submit form/i;
         if (pattern.test(response)) {
-          const button = document.getElementById('submitButton');
+          // const button = document.getElementById('submitButton');
 
           button.innerHTML = 'Something went wrong! Retry';
 
           button.classList.remove('btn-primary');
           button.classList.add('btn-danger');
         } else {
-          const button = document.getElementById('submitButton');
+          // const button = document.getElementById('submitButton');
 
           button.innerHTML = 'Thankyou!';
 
           button.classList.remove('btn-primary');
           button.classList.add('btn-success');
+          button.setAttribute('type', 'button');
         }
       } else {
         // There was an error submitting the form
