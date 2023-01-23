@@ -86,6 +86,7 @@ body {
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -317,6 +318,7 @@ caption {
 th {
   text-align: inherit;
   text-align: -webkit-match-parent;
+  text-align: match-parent;
 }
 
 thead,
@@ -7890,6 +7892,11 @@ textarea.form-control-lg {
   background-image: var(--bs-gradient) !important;
 }
 
+.bg-custom {
+  background: rgb(12,12,12);
+  background: linear-gradient(47deg, rgba(12,12,12,1) 45%, rgba(253,255,150,1) 59%, rgba(12,12,12,1) 74%);
+}
+
 .user-select-all {
   -webkit-user-select: all !important;
      -moz-user-select: all !important;
@@ -11464,7 +11471,8 @@ header.masthead .masthead-heading {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 255, 255, 0.8);
+  background: rgb(160,0,162);
+  background: linear-gradient(47deg, rgba(160,0,162,0.8) 45%, rgba(255,253,95,0.8) 59%, rgba(16,0,136,0.8) 74%);
   align-items: center;
   justify-content: center;
   opacity: 0;
